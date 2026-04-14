@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Júlia Esteves | Ortodontia</title>
+    <meta name="description" content="Dra. Júlia Esteves - Ortodontista. Mestre e especialista em Ortodontia. Atendimento em Belo Horizonte e Bom Despacho - MG.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* =============================================
+           RESET
+        ============================================= */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --beige:       #B8A99A;
+            --beige-dark:  #A0907E;
+            --beige-light: #F5F0EB;
+            --beige-pale:  #FAF8F5;
+            --cream:       #F0E8DF;
+            --dark:        #2C2C2C;
+            --dark-soft:   #4A4A4A;
+            --white:       #FFFFFF;
+            --font-heading: 'Cormorant Garamond', 'Georgia', serif;
+            --font-body:    'Montserrat', 'Helvetica Neue', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--dark);
+            background: var(--white);
+            line-height: 1.7;
+            font-weight: 300;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; }
+
+        .container {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* =============================================
+           NAVBAR
+        ============================================= */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 22px 0;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(12px);
+            padding: 14px 0;
+            box-shadow: 0 1px 30px rgba(0,0,0,0.06);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-logo img {
+            height: 36px;
+            transition: filter 0.3s;
+        }
+
+        .navbar-logo img {
+            height: 36px;
+            transition: filter 0.3s;
+        }
+
+        .navbar:not(.scrolled) .navbar-logo img {
+            filter: brightness(0) invert(1);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--white);
+            transition: color 0.3s;
+        }
+        .navbar.scrolled .nav-links a { color: var(--dark); }
+        .nav-links a:hover { color: var(--beige); }
+
+        .nav-cta {
+            font-size: 0.7rem !important;
+            font-weight: 500 !important;
+            padding: 10px 22px;
+            border: 1px solid rgba(255,255,255,0.6);
+            transition: all 0.3s !important;
+        }
+
+        .navbar.scrolled .nav-cta {
+            border-color: var(--beige);
+            color: var(--beige) !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--beige) !important;
+            border-color: var(--beige) !important;
+            color: var(--white) !important;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 22px;
+            height: 1.5px;
+            background: var(--white);
+            transition: all 0.3s;
+        }
+        .navbar.scrolled .hamburger span { background: var(--dark); }
+
+        /* =============================================
+           HERO
+        ============================================= */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(ellipse at 85% 50%, #5a4232 0%, #3d2e22 40%, #2a1f17 100%);
+            overflow: hidden;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            padding: 100px 0;
+        }
+
+        .hero-img img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 0;
+        }
+
+        .hero-credential {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--beige);
+            margin-bottom: 28px;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            font-weight: 300;
+            line-height: 1.15;
+            color: var(--white);
+            margin-bottom: 30px;
+        }
+
+        .hero-title span {
+            background: var(--beige);
+            color: var(--white);
+            padding: 4px 14px;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+        }
+
+        .hero-subtitle {
+            font-size: 0.95rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 12px;
+        }
+
+        .hero-destaque {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--beige);
+            margin-top: 20px;
+            margin-bottom: 28px;
+            line-height: 1.5;
+        }
+
+        .hero-location {
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 36px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-location svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--beige);
+            flex-shrink: 0;
+        }
+
+        /* =============================================
+           BUTTONS
+        ============================================= */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 15px 36px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .btn-primary {
+            background: var(--beige);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--beige-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn svg {
+            width: 15px;
+            height: 15px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        .section-cta {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* =============================================
+           TYPOGRAPHY HELPERS
+        ============================================= */
+        .eyebrow {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--beige-dark);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.6rem;
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--dark);
+            margin-bottom: 24px;
+        }
+
+        .section-text {
+            font-size: 0.95rem;
+            line-height: 1.85;
+            color: var(--dark-soft);
+        }
+
+        /* =============================================
+           SECTION: INFANTIL
+        ============================================= */
+        .section-infantil {
+            padding: 110px 0;
+            background: var(--white);
+        }
+
+        .infantil-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .infantil-foto {
+            position: relative;
+        }
+
+        .infantil-foto img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .infantil-foto::after {
+            content: '';
+            position: absolute;
+            bottom: -16px;
+            right: -16px;
+            width: 50%;
+            height: 50%;
+            border: 1px solid var(--beige);
+            z-index: -1;
+        }
+
+        .infantil-texto .section-text {
+            margin-bottom: 28px;
+        }
+
+        .infantil-pontos {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .infantil-ponto {
+            font-size: 0.85rem;
+            color: var(--dark-soft);
+            padding: 14px 20px;
+            background: var(--beige-pale);
+            border-left: 3px solid var(--beige);
+            line-height: 1.6;
+        }
+
+        /* =============================================
+           SECTION: ALINHADORES
+        ============================================= */
+        .section-alinhadores {
+            padding: 110px 0;
+            background: var(--beige-pale);
+        }
+
+        .alinhadores-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .alinhadores-foto {
+            position: relative;
+        }
+
+        .alinhadores-foto img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .alinhadores-foto::after {
+            content: '';
+            position: absolute;
+            bottom: -16px;
+            right: -16px;
+            width: 50%;
+            height: 50%;
+            border: 1px solid var(--beige);
+            z-index: -1;
+        }
+
+        .alinhadores-texto .section-text {
+            margin-bottom: 28px;
+        }
+
+        .alinhadores-pontos {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .alinhadores-ponto {
+            font-size: 0.85rem;
+            color: var(--dark-soft);
+            padding: 14px 20px;
+            background: var(--white);
+            border-left: 3px solid var(--beige);
+            line-height: 1.6;
+        }
+
+        .marcas-bar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 40px;
+            margin-top: 28px;
+        }
+
+        .marcas-bar img {
+            height: 30px;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        .marcas-bar img.marca-grande {
+            height: 56px;
+        }
+
+        .marcas-bar img:hover {
+            opacity: 0.8;
+        }
+
+        /* =============================================
+           SECTION: CURIOSIDADES (faixa escura)
+        ============================================= */
+        .section-curiosidades {
+            padding: 70px 0;
+            background: var(--dark);
+        }
+
+        .curiosidades-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .curiosidade-item {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .curiosidade-item::before {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 1px;
+            background: var(--beige);
+            margin: 0 auto 18px;
+        }
+
+        .curiosidade-item p {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-style: italic;
+            line-height: 1.5;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* =============================================
+           SECTION: COMO FUNCIONA A AVALIACAO
+        ============================================= */
+        .section-avaliacao {
+            padding: 110px 0;
+            background: var(--white);
+        }
+
+        .avaliacao-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .avaliacao-video video {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            object-fit: cover;
+            max-height: 600px;
+        }
+
+        .avaliacao-header {
+            margin-bottom: 36px;
+        }
+
+        .avaliacao-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            counter-reset: step;
+        }
+
+        .avaliacao-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(184,169,154,0.2);
+            counter-increment: step;
+        }
+
+        .avaliacao-step:last-child {
+            border-bottom: none;
+        }
+
+        .step-number {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--beige);
+            line-height: 1;
+            min-width: 30px;
+        }
+
+        .avaliacao-step p {
+            font-size: 0.88rem;
+            color: var(--dark-soft);
+            line-height: 1.7;
+            padding-top: 4px;
+        }
+
+        .avaliacao-nota {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 500;
+            font-style: italic;
+            color: var(--white);
+            background: var(--beige);
+            padding: 18px 28px;
+            margin-top: 30px;
+            line-height: 1.5;
+        }
+
+        /* =============================================
+           SECTION: SOBRE
+        ============================================= */
+        .section-sobre {
+            padding: 110px 0;
+            background: var(--beige-pale);
+        }
+
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .sobre-foto img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .sobre-texto .section-title {
+            margin-bottom: 20px;
+        }
+
+        .sobre-texto .section-text + .section-text {
+            margin-top: 16px;
+        }
+
+        /* =============================================
+           SECTION: CONTATO
+        ============================================= */
+        .section-contato {
+            padding: 110px 0;
+            background: var(--white);
+        }
+
+        .contato-header {
+            text-align: center;
+            max-width: 550px;
+            margin: 0 auto 60px;
+        }
+
+        .contato-header .section-text {
+            margin-top: 8px;
+        }
+
+        .locais-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .local-card {
+            background: var(--beige-pale);
+            overflow: hidden;
+        }
+
+        .local-card .mapa {
+            width: 100%;
+            height: 220px;
+        }
+
+        .local-card .mapa iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .local-info {
+            padding: 24px 28px;
+        }
+
+        .local-info h4 {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: var(--dark);
+        }
+
+        .local-info p {
+            font-size: 0.82rem;
+            color: var(--dark-soft);
+            line-height: 1.6;
+        }
+
+        .contato-whatsapp {
+            margin-top: 14px;
+            font-size: 0.78rem;
+            color: var(--dark-soft);
+        }
+
+        /* =============================================
+           FOOTER
+        ============================================= */
+        .footer {
+            background: var(--dark);
+            padding: 50px 0 28px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 28px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            margin-bottom: 24px;
+        }
+
+        .footer-logo img {
+            height: 32px;
+            opacity: 0.85;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 16px;
+        }
+
+        .footer-social a {
+            width: 38px;
+            height: 38px;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            border-color: var(--beige);
+            background: var(--beige);
+        }
+
+        .footer-social svg {
+            width: 15px;
+            height: 15px;
+            fill: rgba(255,255,255,0.6);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* =============================================
+           WHATSAPP FLOAT
+        ============================================= */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 54px;
+            height: 54px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+            z-index: 999;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover { transform: scale(1.1); }
+        .whatsapp-float svg { width: 26px; height: 26px; fill: white; }
+
+        /* =============================================
+           ANIMATIONS
+        ============================================= */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =============================================
+           RESPONSIVE
+        ============================================= */
+        @media (max-width: 1024px) {
+            .container { padding: 0 40px; }
+            .hero .container,
+            .infantil-grid,
+            .alinhadores-grid,
+            .avaliacao-grid,
+            .sobre-grid { grid-template-columns: 1fr; gap: 50px; }
+            .hero-img,
+            .infantil-foto,
+            .alinhadores-foto,
+            .avaliacao-video,
+            .sobre-foto { max-width: 480px; margin: 0 auto; }
+            .curiosidades-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+            .avaliacao-steps { grid-template-columns: repeat(2, 1fr); }
+            .hero-title { font-size: 2.6rem; }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 24px; }
+
+            .section-infantil,
+            .section-alinhadores,
+            .section-avaliacao,
+            .section-sobre,
+            .section-contato { padding: 80px 0; }
+
+            .section-curiosidades { padding: 50px 0; }
+
+            /* Nav mobile */
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0; left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(44,44,44,0.98);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 28px;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links a,
+            .navbar.scrolled .nav-links a {
+                color: var(--white) !important;
+                font-size: 0.9rem;
+                letter-spacing: 3px;
+            }
+            .hamburger { display: flex; z-index: 1001; }
+            .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
+            .hamburger.active span { background: var(--white) !important; }
+
+            /* Hero */
+            .hero { min-height: auto; }
+            .hero .container { grid-template-columns: 1fr; gap: 0; }
+            .hero-content { padding: 100px 0 40px; }
+            .hero-img { max-width: 100%; }
+            .hero-img img { aspect-ratio: 4 / 3; max-height: 400px; width: 100%; }
+            .hero-title { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+
+            /* Grids */
+            .locais-grid,
+            .curiosidades-grid,
+            .avaliacao-steps { grid-template-columns: 1fr; }
+
+            .alinhadores-foto::after,
+            .infantil-foto::after { display: none; }
+
+            .footer-inner { flex-direction: column; gap: 20px; }
+
+            .marcas-bar { gap: 30px; flex-wrap: wrap; }
+            .marcas-bar img { height: 28px; }
+            .marcas-bar img.marca-grande { height: 50px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: 1.7rem; }
+            .section-title { font-size: 1.5rem; }
+            .btn { padding: 13px 26px; font-size: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="navbar-logo">
+                <img src="img/logo-preta.png" alt="Dra. Júlia Esteves - Ortodontia">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#infantil" onclick="closeMenu()">Infantil</a></li>
+                <li><a href="#alinhadores" onclick="closeMenu()">Alinhadores</a></li>
+                <li><a href="#sobre" onclick="closeMenu()">Sobre</a></li>
+                <li><a href="#contato" onclick="closeMenu()">Contato</a></li>
+                <li><a href="https://wa.me/5537999921997?text=Ol%C3%A1!%20Vim%20pelo%20site.%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="nav-cta" target="_blank" onclick="closeMenu()">Agendar</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-credential">Dra. Júlia Esteves</p>
+                <h1 class="hero-title">Cuidar do sorriso no momento certo muda tudo &mdash; no crescimento e na vida adulta.</h1>
+                <p class="hero-subtitle">Seja na infância ou na vida adulta, um diagnóstico bem feito evita tratamentos mais complexos e traz mais leveza, previsibilidade e confiança ao seu sorriso.</p>
+                <p class="hero-destaque">Avaliar cedo não é tratar cedo &mdash; é acompanhar com segurança.</p>
+                <p class="hero-location">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    Bom Despacho &bull; Belo Horizonte
+                </p>
+                <a href="https://wa.me/5537999921997?text=Ol%C3%A1!%20Vim%20pelo%20site.%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="btn btn-primary" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.613.613l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.352 0-4.556-.68-6.426-1.848l-.448-.292-2.65.889.889-2.65-.292-.448A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+                    Agendar avaliação
+                </a>
+            </div>
+            <div class="hero-img">
+                <img src="img/banner.jpg" alt="Dra. Júlia Esteves">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ORTODONTIA INFANTIL ========== -->
+    <section class="section-infantil" id="infantil">
+        <div class="container">
+            <div class="infantil-grid">
+                <div class="infantil-foto fade-in">
+                    <img src="img/infantil.jpg" alt="Dra. Júlia Esteves atendendo criança">
+                </div>
+                <div class="infantil-texto fade-in">
+                    <p class="eyebrow">Ortodontia infantil</p>
+                    <h2 class="section-title">Acompanhar cedo pode evitar tratamentos complexos no futuro.</h2>
+                    <p class="section-text">Muitos sinais no crescimento das crianças passam despercebidos:</p>
+
+                    <div class="infantil-pontos">
+                        <div class="infantil-ponto">Respiração bucal</div>
+                        <div class="infantil-ponto">Alterações na mordida</div>
+                        <div class="infantil-ponto">Sono agitado</div>
+                    </div>
+
+                    <p class="section-text" style="margin-top: 24px;"><strong>Ignorar esses sinais pode impactar o crescimento facial, a respiração e até a autoestima da criança.</strong> O acompanhamento ortodôntico precoce permite orientar o crescimento no momento certo &mdash; de forma leve, preventiva e individualizada.</p>
+                </div>
+            </div>
+
+            <div class="section-cta fade-in">
+                <a href="https://wa.me/5537999921997?text=Ol%C3%A1!%20Vim%20pelo%20site.%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20meu%20filho(a)." class="btn btn-primary" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.613.613l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.352 0-4.556-.68-6.426-1.848l-.448-.292-2.65.889.889-2.65-.292-.448A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+                    Agendar avaliação infantil
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ALINHADORES ========== -->
+    <section class="section-alinhadores" id="alinhadores">
+        <div class="container">
+            <div class="alinhadores-grid">
+                <div class="alinhadores-texto fade-in">
+                    <p class="eyebrow">Jovens e adultos</p>
+                    <h2 class="section-title">Alinhar o sorriso com conforto, discrição e previsibilidade.</h2>
+                    <p class="section-text">Muitas pessoas deixam de tratar o sorriso por medo do aparelho fixo, da estética ou da rotina.</p>
+                    <p class="section-text" style="margin-top: 16px;"><strong>E acabam convivendo por anos com insegurança ao sorrir &mdash; mesmo sabendo que poderiam mudar.</strong> Com alinhadores, é possível cuidar do sorriso:</p>
+
+                    <div class="alinhadores-pontos" style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <div class="alinhadores-ponto">Mais estético</div>
+                        <div class="alinhadores-ponto">Menos consultas</div>
+                        <div class="alinhadores-ponto">Mais confortável</div>
+                        <div class="alinhadores-ponto">Mais higiene oral</div>
+                        <div class="alinhadores-ponto">Mais rápido</div>
+                        <div class="alinhadores-ponto">Mais compatível com sua rotina</div>
+                    </div>
+
+                    <div class="marcas-bar">
+                        <img src="img/invisalign-logo.png" alt="Invisalign" style="height: 38px;">
+                        <img src="img/suresmile-logo.png" alt="SureSmile">
+                    </div>
+                </div>
+                <div class="alinhadores-foto fade-in">
+                    <img src="img/alinhadores.jpg" alt="Alinhadores transparentes">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== COMO FUNCIONA A AVALIACAO ========== -->
+    <section class="section-avaliacao" id="avaliacao">
+        <div class="container">
+            <div class="avaliacao-grid">
+                <div class="avaliacao-video fade-in">
+                    <video autoplay muted loop playsinline>
+                        <source src="img/atendimento.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="fade-in">
+                    <div class="avaliacao-header">
+                        <p class="eyebrow">Como funciona</p>
+                        <h2 class="section-title">A avaliação</h2>
+                        <p class="section-text" style="margin-top: 16px;">Para que você se sinta seguro desde o início, o processo é simples, claro e sem pressa.</p>
+                    </div>
+                    <div class="avaliacao-steps">
+                        <div class="avaliacao-step">
+                            <div class="step-number">1</div>
+                            <p>Conversa e histórico &mdash; queixa, hábitos, sono e respiração</p>
+                        </div>
+                        <div class="avaliacao-step">
+                            <div class="step-number">2</div>
+                            <p>Exame clínico e avaliação da mordida e crescimento</p>
+                        </div>
+                        <div class="avaliacao-step">
+                            <div class="step-number">3</div>
+                            <p>Solicitação de exames</p>
+                        </div>
+                        <div class="avaliacao-step">
+                            <div class="step-number">4</div>
+                            <p>Plano claro: acompanhar ou tratar no tempo certo</p>
+                        </div>
+                    </div>
+                    <p class="avaliacao-nota">Se você quer entender como isso se aplica ao seu caso, agende sua avaliação.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SOBRE ========== -->
+    <section class="section-sobre" id="sobre">
+        <div class="container">
+            <div class="sobre-grid">
+                <div class="sobre-foto fade-in">
+                    <img src="img/sobre.jpg" alt="Dra. Júlia Esteves">
+                </div>
+                <div class="sobre-texto fade-in">
+                    <p class="eyebrow">Sobre você</p>
+                    <h2 class="section-title">Dra. Júlia Esteves</h2>
+                    <p class="section-text">Se você sente que poderia cuidar melhor do seu sorriso &mdash; ou do desenvolvimento do seu filho &mdash; mas não sabe por onde começar, eu posso te ajudar.</p>
+                    <p class="section-text">Sou <span style="background: var(--beige); color: var(--white); padding: 3px 10px; font-weight: 500;">cirurgiã-dentista, mestre e especialista em Ortodontia</span>, com atuação focada em diagnóstico preciso e planejamento individualizado.</p>
+                    <p class="section-text">Meu papel não é apenas tratar &mdash; é te orientar com clareza sobre o melhor momento e a melhor decisão para o seu caso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTATO ========== -->
+    <section class="section-contato" id="contato">
+        <div class="container">
+            <div class="contato-header fade-in">
+                <p class="eyebrow">Vamos conversar</p>
+                <h2 class="section-title">Se você chegou até aqui, provavelmente já percebeu que o momento de avaliar faz diferença.</h2>
+                <p class="section-text">Será um prazer te orientar com calma e clareza sobre o seu caso.</p>
+            </div>
+
+            <div class="locais-grid">
+                <div class="local-card fade-in">
+                    <div class="mapa">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750!2d-45.2567!3d-19.7365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa54b9c89cc3c37%3A0x63e1d7e6c3f7f4d8!2sVita%20Center%20-%20Bom%20Despacho!5e0!3m2!1spt-BR!2sbr!4v1" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="local-info">
+                        <h4>Bom Despacho</h4>
+                        <p>Vita Center &mdash; Rua Vereador João Libério do Couto, 110, sala 402</p>
+                    </div>
+                </div>
+                <div class="local-card fade-in">
+                    <div class="mapa">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750!2d-43.9345!3d-19.9320!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa690c8a1d1c3ed%3A0xb51f02d2fb5e8!2sRua%20dos%20Aimor%C3%A9s%2C%20462%20-%20Funcion%C3%A1rios%2C%20Belo%20Horizonte!5e0!3m2!1spt-BR!2sbr!4v1" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="local-info">
+                        <h4>Belo Horizonte</h4>
+                        <p>Rua dos Aimorés, 462, sala 606 &mdash; Funcionários</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-cta fade-in">
+                <a href="https://wa.me/5537999921997?text=Ol%C3%A1!%20Vim%20pelo%20site.%0AQuero%20agendar%20uma%20avalia%C3%A7%C3%A3o.%0ALocal%3A%0ANome%3A%0AIdade%3A" class="btn btn-primary" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.613.613l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.352 0-4.556-.68-6.426-1.848l-.448-.292-2.65.889.889-2.65-.292-.448A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+                    Agendar pelo WhatsApp
+                </a>
+                <p class="contato-whatsapp">WhatsApp da secretária Carol: (37) 99992-1997</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo">
+                    <img src="img/logo-branca.png" alt="Dra. Júlia Esteves">
+                </div>
+                <div class="footer-social">
+                    <a href="https://instagram.com/dra.juliaestevesc" target="_blank" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="https://wa.me/5537999921997" target="_blank" aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.613.613l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.352 0-4.556-.68-6.426-1.848l-.448-.292-2.65.889.889-2.65-.292-.448A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Dra. Júlia Esteves &mdash; CRO-MG 55.785 &nbsp;|&nbsp; @dra.juliaestevesc &nbsp;|&nbsp; &copy; 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== WHATSAPP FLOAT ========== -->
+    <a href="https://wa.me/5537999921997?text=Ol%C3%A1!%20Vim%20pelo%20site.%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.613.613l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.352 0-4.556-.68-6.426-1.848l-.448-.292-2.65.889.889-2.65-.292-.448A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    </a>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script>
+        // Navbar scroll
+        const navbar = document.getElementById('navbar');
+        const logoImg = document.querySelector('.navbar-logo img');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // Mobile menu
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+            document.getElementById('hamburger').classList.toggle('active');
+        }
+        function closeMenu() {
+            document.getElementById('navLinks').classList.remove('active');
+            document.getElementById('hamburger').classList.remove('active');
+        }
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
